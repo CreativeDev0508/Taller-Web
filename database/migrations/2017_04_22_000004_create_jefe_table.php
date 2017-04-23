@@ -17,9 +17,9 @@ class CreateJefeTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('apodo');
-            $table->enum('pelo', ['Castraño', 'Rubio', 'Canoso', 'Calvo', 'Colorado']);
+            $table->enum('pelo', ['Marron', 'Rubio', 'Canoso', 'Calvo', 'Colorado']);
             $table->enum('sexo', ['Masculino', 'Femenino']);
-            $table->enum('distintivo', ['Tatuaje', 'Cicatriz']);
+            $table->enum('distintivo', ['Ninguno', 'Tatuaje', 'Cicatriz']);
             $table->enum('tez', ['Palida', 'Clara', 'Bronceada', 'Oscura']);
             $table->integer('idNacionalidad')->unsigned()->index()->nullable();
             $table->timestamps();

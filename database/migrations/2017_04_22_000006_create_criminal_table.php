@@ -16,9 +16,9 @@ class CreateCriminalTable extends Migration
         Schema::create('criminal', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->enum('pelo', ['Castraño', 'Rubio', 'Canoso', 'Calvo', 'Colorado']);
+            $table->enum('pelo', ['Marron', 'Rubio', 'Canoso', 'Calvo', 'Colorado']);
             $table->enum('sexo', ['Masculino', 'Femenino']);
-            $table->enum('distintivo', ['Tatuaje', 'Cicatriz']);
+            $table->enum('distintivo', ['Ninguno', 'Tatuaje', 'Cicatriz']);
             $table->enum('tez', ['Palida', 'Clara', 'Bronceada', 'Oscura']);
             $table->mediumText('pista');
             $table->string('ubicacion'); // ID de los paises por donde tenes que pasar para llegar a encontrarlo
