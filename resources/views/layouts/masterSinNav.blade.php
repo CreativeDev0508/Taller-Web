@@ -10,11 +10,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
 </head>
 <body>
+<h3 class="text-center">Nombre del Juego</h3>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="text-center">Nombre del Juego</h3>
-                @include('nav/nav')
                 @yield('contenido')
             </div>
         </div>

@@ -12,11 +12,15 @@
 */
 
 Route::group(['middleware' => ['isOn']], function() { // A traves de este middleware reviso si hay un usuario conectado, sino lo envio al login
-    Route::get('/', function () { return view('welcome'); });
+    Route::get('/', function () { return view('inicio'); });
 });
 
 Auth::routes();
 
 Route::get('/bienvenido', function(){
-    return view ('bienvenidos');
+    return view ('bienvenido');
+});
+
+Route::get('/investigar', function(){
+    return view ('investigar');
 });
