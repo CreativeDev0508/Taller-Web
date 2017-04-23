@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['isOn']], function() { // A traves de este middleware reviso si hay un usuario conectado, sino lo envio al login
+    Route::get('/', function () { return view('welcome'); });
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index');
 
 Route::get('/bienvenido', function(){
     return view ('bienvenidos');

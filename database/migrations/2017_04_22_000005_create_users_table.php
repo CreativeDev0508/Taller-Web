@@ -18,14 +18,14 @@ class CreateUsersTable extends Migration
             $table->string('nick');
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('rango', ['Novato', 'Inspector', 'subcomisario', 'Comisario', 'Primer Detective']);
-            $table->integer('criminalesCapturados');
-            $table->integer('jefesCapturados');
-            $table->integer('contadorCriminales');
-            $table->integer('puntaje');
-            $table->integer('record');
-            $table->integer('tiempo');
-            $table->integer('idJefe')->unsigned()->index()->nullable();
+            $table->enum('rango', ['Novato', 'Inspector', 'subcomisario', 'Comisario', 'Primer Detective'])->default('Novato');
+            $table->integer('criminalesCapturados')->default(0);
+            $table->integer('jefesCapturados')->default(0);
+            $table->integer('contadorCriminales')->default(0);
+            $table->integer('puntaje')->default(0);
+            $table->integer('record')->default(0);
+            $table->integer('tiempo')->default(420); // Tiempo expresado en minutos
+            $table->integer('idJefe')->unsigned()->index()->nullable()->default(1);
             $table->rememberToken();
             $table->timestamps();
 
