@@ -18,8 +18,7 @@ class CriminalTableSeeder extends Seeder
             'distintivo' => "Ninguno",
             'tez' => "Palida",
             'pista' => "nc",
-            'ubicacion' => "nc",
-            'ubicacionesRecorridas' => "nc",
+            'ubicacion' => implode(',', array('1', 1, '2', 3, '3', 4, '4', 2, '5', 5)),
             'idNacionalidad' => 1,
         ]);
 
@@ -30,8 +29,7 @@ class CriminalTableSeeder extends Seeder
             'distintivo' => "Tatuaje",
             'tez' => "Clara",
             'pista' => "n/c",
-            'ubicacion' => "n/c",
-            'ubicacionesRecorridas' => "n/c",
+            'ubicacion' => implode(',', array('1', 1, '2', 3, '3', 4, '4', 2, '5', 5)),
             'idNacionalidad' => 2,
         ]);
 
@@ -42,9 +40,10 @@ class CriminalTableSeeder extends Seeder
             'distintivo' => "Cicatriz",
             'tez' => "Bronceada",
             'pista' => "n/c",
-            'ubicacion' => "n/c",
-            'ubicacionesRecorridas' => "n/c",
+            'ubicacion' => implode(',', array('1', 1, '2', 3, '3', 4, '4', 2, '5', 5)),
             'idNacionalidad' => 3,
         ]);
+
+        
     }
 }

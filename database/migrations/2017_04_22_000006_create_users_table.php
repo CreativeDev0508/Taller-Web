@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nick');
+            $table->string('nick')->unique();
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('rango', ['Novato', 'Inspector', 'subcomisario', 'Comisario', 'Primer Detective'])->default('Novato');
@@ -25,11 +25,14 @@ class CreateUsersTable extends Migration
             $table->integer('puntaje')->default(0);
             $table->integer('record')->default(0);
             $table->integer('tiempo')->default(420); // Tiempo expresado en minutos
+            $table->string('ubicacionesRecorridas')->nullable(); // Ubicaciones por donde ya paso el usuario para encontrarlo
             $table->integer('idJefe')->unsigned()->index()->nullable()->default(1);
+            $table->integer('idCriminal')->unsigned()->index()->nullable();
             $table->rememberToken();
             $table->timestamps();
 
             $table->foreign('idJefe')->references('id')->on('jefe')->onDelete('set null');
+            $table->foreign('idCriminal')->references('id')->on('criminal')->onDelete('set null');
         });
     }
 

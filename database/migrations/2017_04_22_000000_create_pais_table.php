@@ -18,6 +18,9 @@ class CreatePaisTable extends Migration
             $table->string('nombre');
             $table->string('bandera');
             $table->mediumText('descripcion');
+            $table->mediumText('indicioUno')->nullable();
+            $table->mediumText('indicioDos')->nullable();
+            $table->mediumText('indicioTres')->nullable();            
             $table->timestamps();
         });
     }

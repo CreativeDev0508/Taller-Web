@@ -6,5 +6,5 @@
     Esta vista es la que se muestra unicamente cuando el usuario se registra. Es la que va a tener la hoja de fondo y que te lleva al inicio, donde tenes
     toda la hoja principal digamos.
 </h4>    
-<div class="text-center"><a href="{{url('/')}} ">Ir a Pantalla Inicio</a></div>
+<div class="text-center"><a href="vistaGeneral/{{$pais}}">Ir a Pantalla Inicio</a></div>
 @endsection
