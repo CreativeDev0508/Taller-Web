@@ -11,19 +11,10 @@
 |
 */
 
-Route::group(['middleware' => ['isOn']], function() { // A traves de este middleware reviso si hay un usuario conectado, sino lo envio al login
-    Route::get('/', function () { return view('inicio'); });
+Route::get('/', function () {
+    return view('welcome');
 });
 
 Auth::routes();
-Route::get('/bienvenido', 'BienvenidoController@Inicio');
-Route::group(['middleware' => ['primerIngreso']], function() { // A traves de este middleware reviso si hay un usuario conectado, sino lo envio al login
-    Route::get('/bienvenidosss', 'BienvenidoController@Inicio');
-});
 
-
-Route:get('/vistaGeneral/$id', 'VistaGeneralController@Inicio');
-
-Route::get('/investigar', function(){
-    return view ('investigar');
-});
+Route::get('/home', 'HomeController@index');
