@@ -23,3 +23,8 @@ Route::get('/inicio', 'GeneralController@inicio');
 Route::get('/mapa', 'GeneralController@mapa');
 Route::get('/investigar', 'GeneralController@pistas');
 
+Route::get('/top', 'TopController@inicio');
+
+
+Route::get('/criminalcapturado', 'MisionController@criminal');
+Route::get('/jefecapturado', 'MisionController@jefe');
