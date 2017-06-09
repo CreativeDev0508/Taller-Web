@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->integer('contadorCriminales')->default(0);
             $table->integer('puntaje')->default(0);
             $table->integer('record')->default(0);
-            $table->integer('tiempo')->default(420); // Tiempo expresado en minutos
+            $table->integer('tiempo')->default(720); // Tiempo expresado en horas. Equivale a 1 mes (30 dias)
             $table->string('ubicacionesRecorridas')->nullable(); // Ubicaciones por donde ya paso el usuario para encontrarlo
             $table->integer('idJefe')->unsigned()->index()->nullable()->default(1);
             $table->integer('idCriminal')->unsigned()->index()->nullable();
