@@ -1,6 +1,7 @@
-@extends('layouts/master')  @section('titulo', 'Titulo')   @section('contenido')
+@extends('layouts/general')  @section('titulo', 'Titulo')   @section('contenido')
 
-<h3>Vista General - Mapa</h3>
+<div class="text-center">
+    <img width="600" src="https://www.importancia.org/wp-content/uploads/global-del/Mapa-Mundi.jpg" />
+</div>
 
-
-@ensection
+@endsection

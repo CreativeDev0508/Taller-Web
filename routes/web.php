@@ -20,3 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/inicio', 'GeneralController@inicio');
+Route::get('/mapa', 'GeneralController@mapa');
+Route::get('/investigar', 'GeneralController@pistas');
+

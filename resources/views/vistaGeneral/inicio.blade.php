@@ -1,10 +1,7 @@
-@extends('layouts/master')  @section('titulo', 'Titulo')   @section('contenido')
-
-<div class="panel panel-default">
-  <div class="panel-heading"><h3 class="panel-title">Vista General - Inicio</h3></div>
-  <div class="panel-body">
-    Contenido del panel
-  </div>
+@extends('layouts/general')  @section('titulo', 'Titulo')   @section('contenido')
+<div class="text-center">
+    <img src="https://s-media-cache-ak0.pinimg.com/originals/0f/5a/e8/0f5ae8f13960ae98b5545b73ea0696e8.jpg" width="600" />
 </div>
-
 @endsection
+
+
