@@ -19,9 +19,10 @@ Route::get('/', function () {return redirect('/inicio');});
 Route::get('/bienvenida', 'BienvenidosController@inicio');
 //Route::get('/home', 'HomeController@index');
 
-Route::get('/inicio', 'GeneralController@inicio');
+Route::get('/irpais/{id}', 'GeneralController@irPais');
 Route::get('/mapa', 'GeneralController@mapa');
 Route::get('/investigar', 'GeneralController@pistas');
+Route::get('/ver', 'GeneralController@ver');
 
 Route::get('/criminalcapturado', 'MisionController@criminal');
 Route::get('/jefecapturado', 'MisionController@jefe');

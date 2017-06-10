@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Criminal;
 use Illuminate\Support\Facades\Auth;
 use App\Pais;
+use \Crypt;
+
 
 class BienvenidosController extends Controller
 {
@@ -20,6 +22,6 @@ class BienvenidosController extends Controller
         // Busco la fila del primer pais que esta el ladron y le paso a la vista el nombre del pais.
         $pais = Pais::find($array[0]);
 
-        return View('bienvenida.inicio', ['pais' => $pais->nombre]);
+        return View('bienvenida.inicio', ['pais' => $pais->nombre, 'idPais' => $pais->$id]);
     }
 }

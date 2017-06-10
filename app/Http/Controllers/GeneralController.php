@@ -3,12 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pais;
+use \Crypt;
+use Session;
+
 
 class GeneralController extends Controller
 {
-    public function inicio(){
+    public function irPais($id){
 
-        return View('vistaGeneral.inicio');
+        // Resto horas por haber viajado a un pais
+        restarHoras(8);
+
+        // Traigo la fila del pais al cual viajo
+        $pais = Pais::find($id);
+
+        // Guardo en la session el pais en donde me encuentro
+        Session::put('pais', $pais->id);
+
+        return View('vistaGeneral.inicio', ['pais' => $pais]);
     }
 
     public function mapa(){
@@ -28,7 +41,13 @@ class GeneralController extends Controller
 
     public function ver(){
 
-        return View('vistaGeneral.ver');
+        // Recupero desde la sesion el id del pais
+        $id = Session::get('pais');
+
+        // Traigo la fila del pais al cual viajo
+        $pais = Pais::find($id);
+
+        return View('vistaGeneral.inicio', ['pais' => $pais]);
     }
 
     

@@ -14,7 +14,7 @@
             <div class="panel-body">
                 <div class="panel panel-default"><div class="panel-body">@yield('contenido')</div></div>
                 <div class="panel panel-default text-center"><div class="panel-body">
-                    <a href="inicio" class="btn btn-success btn-lg">Ver</a> <a href="mapa" class="btn btn-success btn-lg">Mapa</a> <a href="investigar" class="btn btn-success btn-lg">Investigar</a> <a href="#" class="btn btn-success btn-lg">Armar Orden</a> 
+                    <a href="{{asset('ver')}}" class="btn btn-success btn-lg">Ver</a> <a href="{{asset('mapa')}}" class="btn btn-success btn-lg">Mapa</a> <a href="{{asset('investigar')}}" class="btn btn-success btn-lg">Investigar</a> <a href="{{asset('#')}}" class="btn btn-success btn-lg">Armar Orden</a> 
                 </div></div>
             </div>
         </div>
