@@ -19,6 +19,7 @@
 			<div class="col-md-7">
 
 				<div class="col-md-12 divOpaco cajaNavegacion">
+<<<<<<< HEAD
 					<div class=" pistas divOpaco text-center"> <img src="{{asset('images/lugares/shopping.png')}}"></div>
 					<div class=" pistas divOpaco text-center"> <img src="{{asset('images/lugares/biblioteca.png')}}"></div>
 					<div class=" pistas divOpaco text-center"> <img src="{{asset('images/lugares/aeropuerto.png')}}"></div>
@@ -27,6 +28,14 @@
 
 					<a href="{{asset('mapa')}}" class="btn btn-danger botonJuego ">MAPA</a>
 					<a href="{{asset('orden')}}" class="btn btn-danger botonJuego">ORDEN DE CAPTURA</a>
+=======
+					<h1>CUADRO DE NAVEGACION</h1>
+				</div>
+				<div class="col-md-12 divOpaco margenSup cajaOpc text-center">
+
+					<div><a href="{{asset('mapa')}}" class="btn btn-danger botonJuego">MAPA</div></a>
+					<div><a href="{{asset('orden')}}" class="btn btn-danger botonJuego">ORDEN DE CAPTURA</div></a>
+>>>>>>> 17268826f6d7dd8718c295bb2017c69ec557a0d3
 					
 				</div>
 

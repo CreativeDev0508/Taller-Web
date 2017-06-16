@@ -8,8 +8,13 @@
     <!-- CSS de Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	
+<<<<<<< HEAD
 	<link href="{{asset('css/cssPrincipal.css')}}" rel="stylesheet">
 
+=======
+	<link href="css/cssPrincipal.css" rel="stylesheet">
+ 
+>>>>>>> 17268826f6d7dd8718c295bb2017c69ec557a0d3
 
 </head>
 <body>
