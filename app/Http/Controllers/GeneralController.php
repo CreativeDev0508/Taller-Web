@@ -27,14 +27,7 @@ class GeneralController extends Controller
         Session::put('pais', $pais->id);
 
         return View('vistaGeneral.pantallaJuego', ['pais' => $pais]);
-<<<<<<< HEAD
-    }
 
-    public function volverPais($id)
-    {
-        return redirect('VistaGeneral.pantallaJuego');
-=======
->>>>>>> 17268826f6d7dd8718c295bb2017c69ec557a0d3
     }
 
     public function mapa(){
