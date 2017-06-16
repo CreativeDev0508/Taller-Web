@@ -10,19 +10,28 @@ use Session;
 
 class GeneralController extends Controller
 {
-    public function irPais($id){
-
-        // Resto horas por haber viajado a un pais
-        restarHoras(8);
-
-        // Traigo la fila del pais al cual viajo
-        $pais = Pais::find($id);
-
-        // Guardo en la session el pais en donde me encuentro
-        Session::put('pais', $pais->id);
-
-        return View('vistaGeneral.inicio', ['pais' => $pais]);
+    public function inicio ()
+    {
+        return view ('vistaGeneral.index');
     }
+
+    public function pantallaJuego()
+    {
+        return view ('vistaGeneral.pantallaJuego');
+    }
+    // public function irPais($id){
+
+    //     // Resto horas por haber viajado a un pais
+    //     restarHoras(8);
+
+    //     // Traigo la fila del pais al cual viajo
+    //     $pais = Pais::find($id);
+
+    //     // Guardo en la session el pais en donde me encuentro
+    //     Session::put('pais', $pais->id);
+
+    //     return View('vistaGeneral.pantallaJuego', ['pais' => $pais]);
+    // }
 
     public function mapa(){
 
@@ -31,7 +40,7 @@ class GeneralController extends Controller
 
     public function orden(){
 
-        return View('vistaGeneral.orden');
+        return View('vistaGeneral.generarOrden');
     }
 
     public function pistas(){

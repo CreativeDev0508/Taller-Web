@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.app')  @section('titulo', 'Home')   @section('contenido')
 
 @section('content')
-<div class="container">
+<div class="container margenSupMax">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Logeo</div>
+                <div class="panel-heading">Login</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
@@ -50,7 +50,7 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-danger">
                                     Entrar
                                 </button>
 
@@ -65,5 +65,5 @@
         </div>
     </div>
 </div>
-<div class="text-center"><a href="register" class="alert alert-warning">¿No tienes cuenta? REGISTRATE</a> </div>
+<div class="text-center"><a href="register" class="btn btn-danger">¿No tienes cuenta? REGISTRATE</a> </div>
 @endsection

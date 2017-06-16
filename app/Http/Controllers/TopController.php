@@ -8,6 +8,6 @@ class TopController extends Controller
 {
     public function inicio(){
 
-        return View('top.inicio');
+        return View('top.ranking');
     }
 }

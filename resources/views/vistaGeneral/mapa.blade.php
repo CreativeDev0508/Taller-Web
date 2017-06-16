@@ -1,7 +1,4 @@
-@extends('layouts/general')  @section('titulo', 'Titulo')   @section('contenido')
-
-<div class="text-center">
-    <img width="600" src="https://www.importancia.org/wp-content/uploads/global-del/Mapa-Mundi.jpg" />
+<div class="col-md-12 text-center">
+	<img src="img/mapamundi.png">
+	<div><a href="pantallaJuego.html"><button type="button" class="btn btn-danger boton">Volver</button></></a>
 </div>
-
-@endsection
