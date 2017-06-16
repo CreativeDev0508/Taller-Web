@@ -11,9 +11,13 @@
 |
 */
 Auth::routes();
+Route::get('/', 'GeneralController@inicio'); // Vista de inicio con las opciones de Comenzar, Registrarse y Ranking
+
 Route::get('/top', 'TopController@inicio');
 
 Route::group(['middleware' => ['auth']], function() { // Controla que estes conectado para poder ver las vistas
+
+    Route::get('/comenzar', 'MisionController@inicio'); // Lo lleva a la vista de comienzo de la mision
 
 // Route::get('/', function () {return redirect('/inicio');});
 Route::get('/bienvenida', 'BienvenidosController@inicio');
@@ -29,11 +33,3 @@ Route::get('/jefecapturado', 'MisionController@jefe');
 
 });
 
-Route::get('/', 'GeneralController@inicio');
-Route::get('/comenzar', 'MisionController@inicio');
-
-/* Para armar una ruta pones:
-
-Route::get('/pedidoget', function () {return view('welcome');});)
-
-donde /pedidoget es lo que el usuario pone en la barra de direcciones y welcome es le nombre de la vista
