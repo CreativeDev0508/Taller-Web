@@ -18,9 +18,9 @@ class CreatePaisTable extends Migration
             $table->string('nombre');
             $table->string('imagen');
             $table->mediumText('descripcion');
-            $table->mediumText('indicioUno')->nullable();
-            $table->mediumText('indicioDos')->nullable();
-            $table->mediumText('indicioTres')->nullable();            
+            $table->mediumText('indicio1')->nullable();
+            $table->mediumText('indicio2')->nullable();
+            $table->mediumText('indicio3')->nullable();            
             $table->timestamps();
         });
     }

@@ -15,45 +15,45 @@ class PaisTableSeeder extends Seeder
             'nombre' => "Argentina",
             'imagen' => "arg.jpg",
             'descripcion' => "<ul><li>Info 1</li><li>Info 2</li><li>Info 3</li></ul>",
-            'indicioUno' => "No logre verle la cara, pero lo escuche hablar mucho sobre ir al Pais del Mejor Asado",
-            'indicioDos' => "No logre verle la cara, pero lo escuche hablar mucho sobre ir al Pais del Mejor Asado",
-            'indicioTres' => "No logre verle la cara, pero lo escuche hablar mucho sobre ir al Pais del Mejor Asado",
+            'indicio1' => "Tiene el pelo verde",
+            'indicio2' => "No se nada gil",
+            'indicio3' => "Se fue a fumar unos churros a Uruguay",
         ]);
 
         App\Pais::create([
             'nombre' => "Brasil",
-            'imagen' => "arg.jpg",
+            'imagen' => "bra.jpg",
             'descripcion' => "Breve descripcion del pais",
-            'indicioUno' => "No logre verle la cara, pero lo escuche nombrar entusiasmadamente sobre los Carvanales y la Alegria",
-            'indicioDos' => "No logre verle la cara, pero lo escuche nombrar entusiasmadamente sobre los Carvanales y la Alegria",
-            'indicioTres' => "No logre verle la cara, pero lo escuche nombrar entusiasmadamente sobre los Carvanales y la Alegria",
+            'indicio1' => "No logre verle la cara, pero lo escuche nombrar entusiasmadamente sobre los Carvanales y la Alegria",
+            'indicio2' => "No logre verle la cara, pero lo escuche nombrar entusiasmadamente sobre los Carvanales y la Alegria",
+            'indicio3' => "No logre verle la cara, pero lo escuche nombrar entusiasmadamente sobre los Carvanales y la Alegria",
         ]);
 
         App\Pais::create([
             'nombre' => "Uruguay",
-            'imagen' => "arg.jpg",
+            'imagen' => "uru.jpg",
             'descripcion' => "Breve descripcion del pais",
-            'indicioUno' => "No logre verle la cara, pero lo escuche nombrar sobre ir a conocer el pais del mate",
-            'indicioDos' => "No logre verle la cara, pero lo escuche nombrar sobre ir a conocer el pais del mate",
-            'indicioTres' => "No logre verle la cara, pero lo escuche nombrar sobre ir a conocer el pais del mate",
+            'indicio1' => "No logre verle la cara, pero lo escuche nombrar sobre ir a conocer el pais del mate",
+            'indicio2' => "No logre verle la cara, pero lo escuche nombrar sobre ir a conocer el pais del mate",
+            'indicio3' => "No logre verle la cara, pero lo escuche nombrar sobre ir a conocer el pais del mate",
         ]);
 
         App\Pais::create([
             'nombre' => "Estados Unidos",
-            'imagen' => "arg.jpg",
+            'imagen' => "eeuu.jpg",
             'descripcion' => "Breve descripcion del pais",
-            'indicioUno' => "No logre verle la cara, pero lo escuche hablar bastante nervioso sobre si no va a ser deportado por la seguridad de la Aduana de Trump",
-            'indicioDos' => "No logre verle la cara, pero lo escuche hablar bastante nervioso sobre si no va a ser deportado por la seguridad de la Aduana de Trump",
-            'indicioTres' => "No logre verle la cara, pero lo escuche hablar bastante nervioso sobre si no va a ser deportado por la seguridad de la Aduana de Trump",
+            'indicio1' => "No logre verle la cara, pero lo escuche hablar bastante nervioso sobre si no va a ser deportado por la seguridad de la Aduana de Trump",
+            'indicio2' => "No logre verle la cara, pero lo escuche hablar bastante nervioso sobre si no va a ser deportado por la seguridad de la Aduana de Trump",
+            'indicio3' => "No logre verle la cara, pero lo escuche hablar bastante nervioso sobre si no va a ser deportado por la seguridad de la Aduana de Trump",
         ]);
 
         App\Pais::create([
             'nombre' => "Alemania",
-            'imagen' => "arg.jpg",
+            'imagen' => "alem.jpg",
             'descripcion' => "Breve descripcion del pais",
-            'indicioUno' => "No logre verle la cara, pero lo escuche nombrar sobre un viaje al muro mas famoso del mundo",
-            'indicioDos' => "No logre verle la cara, pero lo escuche nombrar sobre un viaje al muro mas famoso del mundo",
-            'indicioTres' => "No logre verle la cara, pero lo escuche nombrar sobre un viaje al muro mas famoso del mundo",
+            'indicio1' => "No logre verle la cara, pero lo escuche nombrar sobre un viaje al muro mas famoso del mundo",
+            'indicio2' => "No logre verle la cara, pero lo escuche nombrar sobre un viaje al muro mas famoso del mundo",
+            'indicio3' => "No logre verle la cara, pero lo escuche nombrar sobre un viaje al muro mas famoso del mundo",
         ]);
     }
 }
