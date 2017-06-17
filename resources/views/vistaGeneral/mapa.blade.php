@@ -15,7 +15,7 @@
 			<div class="alert alert-danger">Se te acabo el tiempo!</div>
 	@endif
 	</div>
-	<div><a href="{{asset('volverPais')}}"><button type="button" class="btn btn-danger boton">Volver</button></></a>
+	<div><a href="{{asset('ver')}}"><button type="button" class="btn btn-danger boton">Volver</button></></a>
 </div>
 
 
