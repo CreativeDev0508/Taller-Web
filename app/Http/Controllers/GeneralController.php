@@ -135,7 +135,7 @@ class GeneralController extends Controller
         // Traigo la fila del pais al cual viajo
         $pais = Pais::find($id);
 
-        return View('vistaGeneral.inicio', ['pais' => $pais]);
+        return View('vistaGeneral.pantallaJuego', ['pais' => $pais]);
     }
 
     
