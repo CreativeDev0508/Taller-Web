@@ -13,8 +13,8 @@ class PaisTableSeeder extends Seeder
     {
         App\Pais::create([
             'nombre' => "Argentina",
-            'bandera' => "linkImg",
-            'descripcion' => "Breve descripcion del pais",
+            'imagen' => "arg.jpg",
+            'descripcion' => "<ul><li>Info 1</li><li>Info 2</li><li>Info 3</li></ul>",
             'indicioUno' => "No logre verle la cara, pero lo escuche hablar mucho sobre ir al Pais del Mejor Asado",
             'indicioDos' => "No logre verle la cara, pero lo escuche hablar mucho sobre ir al Pais del Mejor Asado",
             'indicioTres' => "No logre verle la cara, pero lo escuche hablar mucho sobre ir al Pais del Mejor Asado",
@@ -22,7 +22,7 @@ class PaisTableSeeder extends Seeder
 
         App\Pais::create([
             'nombre' => "Brasil",
-            'bandera' => "linkImg",
+            'imagen' => "arg.jpg",
             'descripcion' => "Breve descripcion del pais",
             'indicioUno' => "No logre verle la cara, pero lo escuche nombrar entusiasmadamente sobre los Carvanales y la Alegria",
             'indicioDos' => "No logre verle la cara, pero lo escuche nombrar entusiasmadamente sobre los Carvanales y la Alegria",
@@ -31,7 +31,7 @@ class PaisTableSeeder extends Seeder
 
         App\Pais::create([
             'nombre' => "Uruguay",
-            'bandera' => "linkImg",
+            'imagen' => "arg.jpg",
             'descripcion' => "Breve descripcion del pais",
             'indicioUno' => "No logre verle la cara, pero lo escuche nombrar sobre ir a conocer el pais del mate",
             'indicioDos' => "No logre verle la cara, pero lo escuche nombrar sobre ir a conocer el pais del mate",
@@ -40,7 +40,7 @@ class PaisTableSeeder extends Seeder
 
         App\Pais::create([
             'nombre' => "Estados Unidos",
-            'bandera' => "linkImg",
+            'imagen' => "arg.jpg",
             'descripcion' => "Breve descripcion del pais",
             'indicioUno' => "No logre verle la cara, pero lo escuche hablar bastante nervioso sobre si no va a ser deportado por la seguridad de la Aduana de Trump",
             'indicioDos' => "No logre verle la cara, pero lo escuche hablar bastante nervioso sobre si no va a ser deportado por la seguridad de la Aduana de Trump",
@@ -49,7 +49,7 @@ class PaisTableSeeder extends Seeder
 
         App\Pais::create([
             'nombre' => "Alemania",
-            'bandera' => "linkImg",
+            'imagen' => "arg.jpg",
             'descripcion' => "Breve descripcion del pais",
             'indicioUno' => "No logre verle la cara, pero lo escuche nombrar sobre un viaje al muro mas famoso del mundo",
             'indicioDos' => "No logre verle la cara, pero lo escuche nombrar sobre un viaje al muro mas famoso del mundo",

@@ -18,7 +18,7 @@ class CriminalTableSeeder extends Seeder
             'distintivo' => "Ninguno",
             'tez' => "Palida",
             'pista' => "nc",
-            'ubicacion' => implode(',', array('1', 1, '2', 3, '3', 4, '4', 2, '5', 5)),
+            'ubicacion' => implode(',', array(1, 2, 3, 5, 4)),
             'idNacionalidad' => 1,
         ]);
 
@@ -29,7 +29,7 @@ class CriminalTableSeeder extends Seeder
             'distintivo' => "Tatuaje",
             'tez' => "Clara",
             'pista' => "n/c",
-            'ubicacion' => implode(',', array('1', 1, '2', 3, '3', 4, '4', 2, '5', 5)),
+            'ubicacion' => implode(',', array(3, 1, 4, 2, 5)),
             'idNacionalidad' => 2,
         ]);
 
@@ -40,8 +40,19 @@ class CriminalTableSeeder extends Seeder
             'distintivo' => "Cicatriz",
             'tez' => "Bronceada",
             'pista' => "n/c",
-            'ubicacion' => implode(',', array('1', 1, '2', 3, '3', 4, '4', 2, '5', 5)),
+            'ubicacion' => implode(',', array(4, 3, 1, 2, 5)),
             'idNacionalidad' => 3,
+        ]);
+
+        App\Criminal::create([
+            'nombre' => "Roy Williams",
+            'pelo' => "Calvo",
+            'sexo' => "Masculino",
+            'distintivo' => "Cicatriz",
+            'tez' => "Clara",
+            'pista' => "n/c",
+            'ubicacion' => implode(',', array(4, 3, 1, 2, 5)),
+            'idNacionalidad' => 4,
         ]);
 
         

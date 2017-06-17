@@ -4,7 +4,7 @@
 		<div class="row colorBlanco">
 			<div class="col-md-4 divOpaco cajaMapa margenDerecho" style="font-size: 15px">
 				<h1>UBICACION ACTUAL: {{$pais->nombre}} </h1>
-				<img src="{{asset('images/arg.jpg')}}" class=" text-center">
+				<img src="{{asset('images/pais')}}/{{$pais->imagen}}" class=" text-center">
 				<div style="margin-top: 25px; font-size: 20px">
 					{!! $pais->descripcion !!}
 				</div>
