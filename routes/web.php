@@ -29,7 +29,7 @@ Route::get('/bienvenida', 'BienvenidosController@inicio');
 Route::get('/irPais/{id}', 'GeneralController@irPais');
 Route::get('/mapa', 'GeneralController@mapa');
 Route::get('/investigar', 'GeneralController@pistas');
-Route::get('/ver', 'GeneralController@ver');
+Route::get('/ver/{id}', 'GeneralController@ver');
 
 Route::get('/criminalcapturado', 'MisionController@criminal');
 Route::get('/jefecapturado', 'MisionController@jefe');
