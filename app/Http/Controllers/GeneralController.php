@@ -23,20 +23,18 @@ class GeneralController extends Controller
         // Traigo la fila del pais al cual viajo
         $pais = Pais::find($id);
 
-        // Guardo en la session el pais en donde me encuentro
-        Session::put('pais', $pais->id);
-
         // Asigno aletoriamente un numero entre el 1 y el 3 a tres variables para repartir la ubicacion de las pistas
-        $n1 = rand(1,3);
+            $n1 = rand(1,3);
 
-        do{
-            $n2 = rand(1,3);
-        }while($n2 == $n1);
+            do{
+                $n2 = rand(1,3);
+            }while($n2 == $n1);
 
-        do{
-            $n3 = rand(1,3);
-        }while($n3 == $n1 || $n3 == $n2);
+            do{
+                $n3 = rand(1,3);
+            }while($n3 == $n1 || $n3 == $n2);
 
+        
         // Le asigno la pista a cada variable
         $pista = "indicio" . $n1;        
         $n1 = $pais->$pista;
@@ -46,6 +44,64 @@ class GeneralController extends Controller
 
         $pista = "indicio" . $n3;        
         $n3 = $pais->$pista;
+
+        // Consulto si el pais al cual viajo es el proximo en el recorrido del criminal
+        if(validarPais($pais->id))
+        {
+ 
+            // Guardo en la session el pais en donde me encuentro
+            Session::put('pais', $pais->id);
+
+            
+
+        }else{
+            $n1 = "No encontramos nada interesante...";
+            $n2 = "No encontramos nada interesante...";
+            $n3 = "No encontramos nada interesante...";
+        }
+
+        return View('vistaGeneral.pantallaJuego', [
+                                                    'pais' => $pais,
+                                                    'pista1' => $n1,
+                                                    'pista2' => $n2,
+                                                    'pista3' => $n3
+                                                  ]);
+
+    }
+
+        public function irPaisF($id){
+
+        // Resto horas por haber viajado a un pais
+        restarHoras(8);
+
+        // Traigo la fila del pais al cual viajo
+        $pais = Pais::find($id);
+
+        // Asigno aletoriamente un numero entre el 1 y el 3 a tres variables para repartir la ubicacion de las pistas
+            $n1 = rand(1,3);
+
+            do{
+                $n2 = rand(1,3);
+            }while($n2 == $n1);
+
+            do{
+                $n3 = rand(1,3);
+            }while($n3 == $n1 || $n3 == $n2);
+
+        
+        // Le asigno la pista a cada variable
+        $pista = "indicio" . $n1;        
+        $n1 = $pais->$pista;
+
+        $pista = "indicio" . $n2;        
+        $n2 = $pais->$pista;
+
+        $pista = "indicio" . $n3;        
+        $n3 = $pais->$pista;
+
+            // Guardo en la session el pais en donde me encuentro
+            Session::put('pais', $pais->id);
+
 
         return View('vistaGeneral.pantallaJuego', [
                                                     'pais' => $pais,

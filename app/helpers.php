@@ -13,12 +13,35 @@ function restarHoras($horas){
     return;
 }
 
-function modal($pista){
 
-    $modal = "<div class='modal fade' id='myModal' role='dialog'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal'>&times;</button><h4 class='modal-title'>Posible Pista</h4></div><div class='modal-body'><p>" . $pista . "</p></div>
-   <div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'>Cerrar</button></div></div></div></div>";
+function validarPais($id){ 
+    // $id representa el pais al cual quiero viajar
+    // $sesion representa el pais en el que estoy
+    // $lugar representa los paises donde esta el criminal
 
-    return $modal;
+    // Traigo al criminal
+    $criminal = App\Criminal::find(Auth::User()->idCriminal);
+
+    // Me devuelve el id del pais en el que esta el usuario
+    $sesion = session('pais');
+    
+    // Desarmo el array de los paises donde se encuentra
+    $lugar = explode(',', $criminal->ubicacion); 
+
+
+
+    for($i=0; $i<5 ; $i++){
+        
+        if($lugar[$i] == $sesion){
+            if($lugar[$i] != $lugar[4]){
+                if($lugar[$i+1] == $id){
+                    return true;
+                 }
+                }else return true;
+        } 
+    }
+
+    return false;
 }
 
 

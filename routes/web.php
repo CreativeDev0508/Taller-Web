@@ -18,6 +18,9 @@ Route::get('/top', 'TopController@inicio');
 Route::group(['middleware' => ['auth']], function() { // Controla que estes conectado para poder ver las vistas
 
     Route::get('/comenzar', 'MisionController@inicio'); // Lo lleva a la vista de comienzo de la mision
+    Route::get('/irPaisF/{id}', 'GeneralController@irPaisF');
+    Route::get('/asignarPais', 'MisionController@asignar');
+    
 
 // Route::get('/', function () {return redirect('/inicio');});
 Route::get('/bienvenida', 'BienvenidosController@inicio');

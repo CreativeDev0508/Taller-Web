@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Criminal;
 use Illuminate\Support\Facades\Auth;
 use App\Pais;
+use Session;
 
 class MisionController extends Controller
 {
@@ -31,5 +32,21 @@ class MisionController extends Controller
     public function criminal(){
 
         return View('mision.criminalCapturado');
+    }
+
+    public function asignar(){
+        // Traigo al criminal
+        $criminal = Criminal::find(Auth::User()->idCriminal);
+
+        // Desarmo el array de los paises donde se encuentra
+        $array = explode(',', $criminal->ubicacion); 
+
+        // Busco la fila del primer pais que esta el ladron
+        $pais = Pais::find($array[0]);
+
+        // Guardo en la session el pais en donde me encuentro
+        Session::put('pais', $pais->id);
+
+        return redirect('/comenzar');
     }
 }

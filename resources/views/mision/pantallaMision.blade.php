@@ -11,7 +11,7 @@
 
 					LA AGENCIA</p>
 					<div style="margin-top: 30px">
-					<a href="irPais/{{$idPais}}" style="float: right;" class="btn btn-default fuenteTitulo">Comenzar mision</a>
+					<a href="irPaisF/{{$idPais}}" style="float: right;" class="btn btn-default fuenteTitulo">Comenzar mision</a>
 					</div>	
 			</div>
 		</div>
