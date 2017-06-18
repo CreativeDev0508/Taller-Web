@@ -60,7 +60,44 @@ class MisionController extends Controller
 
     public function orden()
     {
+        $criminales = Criminal::all();
+        return View('vistaGeneral.generarOrden', ['criminales' => $criminales]);
+    }
 
-        return view ('vistaGeneral.generarOrden');
+    public function ordenOk(Request $datos)
+    {
+        if(Auth::User()->puntaje == 0)
+        {
+            // Comparo si la id del criminal que seleccione es la misma del criminal que buscaba
+            
+            if(Auth::User()->idCriminal == $datos->criminalSeleccionado)
+            {
+                $mensaje = "Los has logrado! Haz capturado al ladron que veniamos buscando hace tiempo. Felicidades!!";
+                // Si atrapo al criminal suma 500 puntos
+                sumarPuntos(500);
+                
+            }
+                else
+                {
+                    $mensaje = "Oh no! te haz confundido! Este no era el criminal que buscabamos.";
+                }
+
+                // Vamos a calcular el puntaje final del jugador
+                // Si logro capturar al ladron sumo 500 puntos
+                // Por cada hora que le sobro del tiempo, sumo 2 puntos
+                
+                $puntaje = calcularPuntaje();
+            }
+                else
+                {
+                    $puntaje = "No haga trampa detective!";
+                    $mensaje = "No haga trampa detective!";
+                }
+
+
+ 
+
+        return view('mision.criminalCapturado', ['mensaje' => $mensaje, 'puntaje' => $puntaje]);
+       
     }
 }

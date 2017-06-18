@@ -29,5 +29,8 @@ Route::group(['middleware' => ['auth']], function() { // Controla que estes cone
     Route::get('/orden', 'MisionController@orden');
     Route::get('/jefecapturado', 'MisionController@jefe');
 
+    Route::post('/orden', 'MisionController@ordenOk');
+    
+
 });
 

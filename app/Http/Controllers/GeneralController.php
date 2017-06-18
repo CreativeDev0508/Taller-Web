@@ -93,12 +93,6 @@ class GeneralController extends Controller
         $paises = Pais::All();
         return View('vistaGeneral.mapa', ['paises' => $paises]);
     }
-
-    public function orden(){
-
-        return View('vistaGeneral.generarOrden');
-    }
-
     public function pistas(){
 
         return View('vistaGeneral.pistas');

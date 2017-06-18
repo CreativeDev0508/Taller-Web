@@ -172,3 +172,17 @@ function ultimoPais($pais, $criminal){
 
     return false;
 }
+
+function calcularPuntaje(){
+    $usuario = App\User::find(Auth::User()->id);
+    $puntos = $usuario->tiempo * 2;
+    $usuario->puntaje += $puntos;
+
+    return $usuario->puntaje;
+}
+
+function sumarPuntos($pts){
+    $usuario = App\User::find(Auth::User()->id);
+    $usuario->puntaje += $pts;
+    $usuario->save();
+}

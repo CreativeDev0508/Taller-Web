@@ -70,7 +70,7 @@ class CriminalTableSeeder extends Seeder
             'nombre' => "Maria Licciardi",
             'idPelo' => 2,
             'idSexo' => 2,
-            'idDistintivo' => 4,
+            'idDistintivo' => 2,
             'idTez' => 4,
             'imagen' => 'crim6.png',
             'ubicacion' => implode(',', array(1, 5, 2, 4, 3)),
