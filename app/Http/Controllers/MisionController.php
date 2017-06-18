@@ -35,6 +35,7 @@ class MisionController extends Controller
     }
 
     public function asignar(){
+        
         // Traigo al criminal
         $criminal = Criminal::find(Auth::User()->idCriminal);
 

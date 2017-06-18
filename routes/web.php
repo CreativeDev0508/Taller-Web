@@ -19,22 +19,15 @@ Route::group(['middleware' => ['auth']], function() { // Controla que estes cone
 
     Route::get('/comenzar', 'MisionController@inicio'); // Lo lleva a la vista de comienzo de la mision
     Route::get('/irPaisF/{id}', 'GeneralController@irPaisF');
-    Route::get('/asignarPais', 'MisionController@asignar');
-    
+    Route::get('/irPais/{id}', 'GeneralController@irPais');
+    Route::get('/mapa', 'GeneralController@mapa');
+    Route::get('/investigar', 'GeneralController@pistas');
+    Route::get('/ver/{id}', 'GeneralController@ver');
 
-// Route::get('/', function () {return redirect('/inicio');});
-Route::get('/bienvenida', 'BienvenidosController@inicio');
-//Route::get('/home', 'HomeController@index');
-
-Route::get('/irPais/{id}', 'GeneralController@irPais');
-Route::get('/mapa', 'GeneralController@mapa');
-Route::get('/investigar', 'GeneralController@pistas');
-Route::get('/ver/{id}', 'GeneralController@ver');
-
-
-Route::get('/criminalcapturado', 'MisionController@criminal');
-Route::get('/orden', 'MisionController@orden');
-Route::get('/jefecapturado', 'MisionController@jefe');
+    Route::get('/asignarPais', 'MisionController@asignar'); // Le asigna el id a la session
+    Route::get('/criminalcapturado', 'MisionController@criminal');
+    Route::get('/orden', 'MisionController@orden');
+    Route::get('/jefecapturado', 'MisionController@jefe');
 
 });
 

@@ -40,10 +40,8 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <p> {{$pista1}} </p>
-		  
-		  <p>Han transcurrido 2 horas. Tiempo Restante: {{Auth::User()->tiempo}} </p>
-        </div>
+          <p> {!! $pista1 !!} </p>
+		          </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
@@ -62,7 +60,7 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <p>{{$pista2}}</p>
+          <p>{!! $pista2 !!}</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -82,7 +80,7 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <p>{{$pista3}}</p>
+          <p>{!! $pista3 !!}</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
