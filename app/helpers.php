@@ -201,13 +201,15 @@ function guardarPuntaje($pts){
 
     $usuario = App\User::find(Auth::User()->id);
     $usuario->record += $pts;
+    $usuario->save();
 }
 
 function nuevoTop($criminalSeleccionado, $puntaje){
 
      $top = new App\Top;
      $top->usuario = Auth::User()->nick;
-     $top->puntaje = $puntaje;
+     $top->puntaje = ($puntaje / ($top->mision+1));
+     $top->mision++;
 
      if(Auth::User()->idCriminal == $criminalSeleccionado){
         $top->criminalesCapturados++;
@@ -216,10 +218,17 @@ function nuevoTop($criminalSeleccionado, $puntaje){
     $top->save();
 }
 
-function actualizarTop($puntaje){
+function actualizarTop($puntaje, $criminalSeleccionado){
 
-    $top = App\Top::where('nick', '=' , Auth::User()->nick)->firstOrFail();
-    $top->puntaje += $puntaje;
+    $top = App\Top::where('usuario', '=' , Auth::User()->nick)->firstOrFail();
+    $top->puntaje = (($puntaje + $top->puntaje) / ($top->mision+1));
+    $top->mision++;
+
+    if(Auth::User()->idCriminal == $criminalSeleccionado){
+        $top->criminalesCapturados++;
+    }
+
+    $top->save();
 }
 
 function asignarCriminal(){
@@ -227,4 +236,18 @@ function asignarCriminal(){
     $user = App\User::find(Auth::User()->id);
     $user->idCriminal = App\Criminal::all()->random()->id;
     $user->save();
+}
+
+function existeUsuarioTop(){
+
+    $tops = App\Top::all();
+
+    foreach($tops as $t){
+
+        if($t->usuario == Auth::User()->nick){
+            return true;
+        }
+    }
+
+    return false;
 }

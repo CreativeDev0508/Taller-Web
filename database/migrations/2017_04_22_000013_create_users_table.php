@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->enum('rango', ['Novato', 'Inspector', 'subcomisario', 'Comisario', 'Primer Detective'])->default('Novato');
             $table->integer('criminalesCapturados')->default(0);
             $table->integer('record')->default(0);
+            $table->integer('mision')->default(0);
             $table->integer('tiempo')->default(288); // Tiempo expresado en horas. Equivale a 1 mes (30 dias)
             $table->integer('idCriminal')->unsigned()->index()->nullable();
             $table->rememberToken();

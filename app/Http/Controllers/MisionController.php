@@ -58,8 +58,6 @@ class MisionController extends Controller
 
     public function ordenOk(Request $datos)
     {
-        if(Auth::User()->record == 0)
-        {
             // Comparo si la id del criminal que seleccione es la misma del criminal que buscaba
             
             if(Auth::User()->idCriminal == $datos->criminalSeleccionado)
@@ -75,17 +73,15 @@ class MisionController extends Controller
                 $puntaje = calcularPuntaje($datos->criminalSeleccionado);
 
                 // Actualizo la tabla de puntaje
-                if(Auth::User()->record == 0){ nuevoTop($datos->criminalSeleccionado, $puntaje); }   else  {   actualizarTop($puntaje);   }
+                if(existeUsuarioTop()){
+                    actualizarTop($puntaje, $datos->criminalSeleccionado);
+                    }else{
+                        nuevoTop($datos->criminalSeleccionado, $puntaje); 
+                        }
 
                 // Guardo el puntaje en la tabla record del usuario
                 guardarPuntaje($puntaje);
-               
-            }
-                else
-                {
-                    $puntaje = "No haga trampa detective!";
-                    $mensaje = "No haga trampa detective!";
-                }
+
 
                 
 

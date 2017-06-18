@@ -10,6 +10,7 @@
 				<tr>
 					<td><strong>Rank</strong></td>
 					<td><strong>Jugador</strong></td>
+					<td><strong>Misiones Realizadas</strong></td>
 					<td><strong>Criminales Capturados</strong></td>
 					<td><strong>Puntaje</strong></td>
 				</tr>
@@ -18,6 +19,7 @@
 					<tr>
 						<td>{{$i}}</td>
 						<td>{{$top->usuario}}</td>
+						<td>{{$top->mision}}</td>
 						<td>{{$top->criminalesCapturados}}</td>
 						<td>{{$top->puntaje}}</td>
 					</tr>

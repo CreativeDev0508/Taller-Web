@@ -9,7 +9,7 @@ class TopController extends Controller
 {
     public function inicio(){
 
-        $tops = Top::orderBy('puntaje')->get();
+        $tops = Top::orderBy('puntaje', 'desc')->get();
         return View('top.ranking', ['tops' => $tops]);
     }
 }
