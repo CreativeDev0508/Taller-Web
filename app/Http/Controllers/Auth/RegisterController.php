@@ -68,6 +68,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'idCriminal' => Criminal::all()->random()->id,
+            
         ]);
     }
 }

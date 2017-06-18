@@ -34,19 +34,26 @@ class MisionController extends Controller
         return View('mision.criminalCapturado');
     }
 
-    public function asignar(){
+    // public function asignar(){
         
-        // Traigo al criminal
-        $criminal = Criminal::find(Auth::User()->idCriminal);
+    //     // Traigo al criminal
+    //     $criminal = Criminal::find(Auth::User()->idCriminal);
 
-        // Desarmo el array de los paises donde se encuentra
-        $array = explode(',', $criminal->ubicacion); 
+    //     // Desarmo el array de los paises donde se encuentra
+    //     $array = explode(',', $criminal->ubicacion); 
 
-        // Busco la fila del primer pais que esta el ladron
-        $pais = Pais::find($array[0]);
+    //     // Busco la fila del primer pais que esta el ladron
+    //     $pais = Pais::find($array[0]);
 
-        // Guardo en la session el pais en donde me encuentro
-        Session::put('pais', $pais->id);
+    //     // Guardo en la session el pais en donde me encuentro
+    //     Session::put('pais', $pais->id);
+
+    //     return redirect('/comenzar');
+    // }
+
+        public function asignar(){
+        
+        Session::put('pais', 0);
 
         return redirect('/comenzar');
     }

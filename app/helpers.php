@@ -115,10 +115,10 @@ function detalleCriminal(){
         $proximo = "Tenia el pelo de color " . nombrePelo($criminal->idPelo);
         break;
     case 2: /* Brasil */ 
-        $proximo = "Tenia la tez de color" . nombreTez($criminal->idTez);
+        $proximo = "Tenia la tez de color " . nombreTez($criminal->idTez);
         break;
     case 3: /* Uruguay */   
-        $proximo = "Lo vi! era un sujeto del sexo" . nombreSexo($criminal->idSexo);
+        $proximo = "Lo vi! era un sujeto del sexo " . nombreSexo($criminal->idSexo);
         break;
     case 4: /* Estados Unidos */
         $proximo = "Vi al criminal, llevaba " . nombreDistintivo($criminal->idDistintivo);
@@ -132,4 +132,36 @@ return $proximo;
 }
 
 
+function asignarValor($n, $criminal){
+    if($n == 1)
+    {
+        $n = proximoPais($criminal);
+        return $n;
+    }
 
+    if($n == 2)
+    {
+        $n = detalleCriminal();
+        return $n;
+    }
+
+    if($n == 3)
+    {
+        $n = "No encontramos nada interesante...";
+        return $n;
+    }
+
+}
+
+function ultimoPais($pais, $criminal){
+
+    // Desarmo el array de los paises donde se encuentra
+    $lugar = explode(',', $criminal->ubicacion); 
+
+    if($lugar[4] == $pais)
+    {
+        return true;
+    }
+
+    return false;
+}
