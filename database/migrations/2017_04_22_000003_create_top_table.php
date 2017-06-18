@@ -17,8 +17,7 @@ class CreateTopTable extends Migration
             $table->increments('id');
             $table->string('usuario');
             $table->integer('puntaje');
-            $table->integer('criminalesCapturados');
-            $table->integer('jefesCapturados');
+            $table->integer('criminalesCapturados')->default(0);
             $table->timestamps();
         });
     }

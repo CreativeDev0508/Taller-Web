@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nick', 'email', 'password', 'ubicacionesRecorridas', 'idCriminal'
+        'nick', 'email', 'password', 'idCriminal'
     ];
 
     /**
@@ -27,7 +27,4 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function jefe(){
-        return $this->belongsTo(Jefe::Class);
-    }
 }

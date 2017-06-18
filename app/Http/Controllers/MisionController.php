@@ -13,11 +13,15 @@ class MisionController extends Controller
 {
     public function inicio()
     {
+        
+
         // Busco al criminal que tiene asignado el jugador
         $criminal = Criminal::find(Auth::User()->idCriminal);
 
+        
         // Desarmo el array de los paises donde se encuentra
         $array = explode(',', $criminal->ubicacion); 
+
 
         // Busco la fila del primer pais que esta el ladron y le paso a la vista el nombre del pais.
         $pais = Pais::find($array[0]);
@@ -35,26 +39,13 @@ class MisionController extends Controller
         return View('mision.criminalCapturado');
     }
 
-    // public function asignar(){
-        
-    //     // Traigo al criminal
-    //     $criminal = Criminal::find(Auth::User()->idCriminal);
 
-    //     // Desarmo el array de los paises donde se encuentra
-    //     $array = explode(',', $criminal->ubicacion); 
-
-    //     // Busco la fila del primer pais que esta el ladron
-    //     $pais = Pais::find($array[0]);
-
-    //     // Guardo en la session el pais en donde me encuentro
-    //     Session::put('pais', $pais->id);
-
-    //     return redirect('/comenzar');
-    // }
 
         public function asignar(){
         
         Session::put('pais', 0);
+        // Le asigno un criminal aletorio
+        asignarCriminal();
 
         return redirect('/comenzar');
     }
@@ -67,34 +58,28 @@ class MisionController extends Controller
 
     public function ordenOk(Request $datos)
     {
-        if(Auth::User()->puntaje == 0)
+        if(Auth::User()->record == 0)
         {
             // Comparo si la id del criminal que seleccione es la misma del criminal que buscaba
             
             if(Auth::User()->idCriminal == $datos->criminalSeleccionado)
             {
-                $mensaje = "Los has logrado! Haz capturado al ladron que veniamos buscando hace tiempo. Felicidades!!";
-                // Si atrapo al criminal suma 500 puntos
-                sumarPuntos(500);
-                
+                $mensaje = "Los has logrado! Haz capturado al ladron que veniamos buscando hace tiempo. Felicidades!!";                       
             }
                 else
                 {
                     $mensaje = "Oh no! te haz confundido! Este no era el criminal que buscabamos.";
-                }
+                }                
 
-                // Vamos a calcular el puntaje final del jugador
-                // Si logro capturar al ladron sumo 500 puntos
-                // Por cada hora que le sobro del tiempo, sumo 2 puntos
-                
-                $puntaje = calcularPuntaje();
+                // Calculo el puntaje
+                $puntaje = calcularPuntaje($datos->criminalSeleccionado);
 
-                $top = new Top;
+                // Actualizo la tabla de puntaje
+                if(Auth::User()->record == 0){ nuevoTop($datos->criminalSeleccionado, $puntaje); }   else  {   actualizarTop($puntaje);   }
 
-                $top->usuario = Auth::User()->nombre;
-                $top->puntaje = $puntaje;
-
-                $top->save();
+                // Guardo el puntaje en la tabla record del usuario
+                guardarPuntaje($puntaje);
+               
             }
                 else
                 {
@@ -102,8 +87,7 @@ class MisionController extends Controller
                     $mensaje = "No haga trampa detective!";
                 }
 
-
- 
+                
 
         return view('mision.criminalCapturado', ['mensaje' => $mensaje, 'puntaje' => $puntaje]);
        

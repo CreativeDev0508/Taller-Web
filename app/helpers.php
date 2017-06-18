@@ -173,16 +173,58 @@ function ultimoPais($pais, $criminal){
     return false;
 }
 
-function calcularPuntaje(){
+function calcularPuntaje($criminalSeleccionado){
     $usuario = App\User::find(Auth::User()->id);
     $puntos = $usuario->tiempo * 2;
-    $usuario->puntaje += $puntos;
+    $usuario->record += ($usuario->tiempo * 2);
 
-    return $usuario->puntaje;
+    if(Auth::User()->idCriminal == $criminalSeleccionado){
+        $usuario->record += 500; 
+        $usuario->criminalesCapturados ++; 
+    }
+
+    return $usuario->record;
 }
 
-function sumarPuntos($pts){
+function sumarPuntos($pts, $criminalSeleccionado){
     $usuario = App\User::find(Auth::User()->id);
-    $usuario->puntaje += $pts;
+    $usuario->record += $pts;
+
+    if(Auth::User()->idCriminal == $criminalSeleccionado){
+        $usuario->record += 500;  
+    }
+
     $usuario->save();
+}
+
+function guardarPuntaje($pts){
+
+    $usuario = App\User::find(Auth::User()->id);
+    $usuario->record += $pts;
+}
+
+function nuevoTop($criminalSeleccionado, $puntaje){
+
+     $top = new App\Top;
+     $top->usuario = Auth::User()->nick;
+     $top->puntaje = $puntaje;
+
+     if(Auth::User()->idCriminal == $criminalSeleccionado){
+        $top->criminalesCapturados++;
+    }
+
+    $top->save();
+}
+
+function actualizarTop($puntaje){
+
+    $top = App\Top::where('nick', '=' , Auth::User()->nick)->firstOrFail();
+    $top->puntaje += $puntaje;
+}
+
+function asignarCriminal(){
+
+    $user = App\User::find(Auth::User()->id);
+    $user->idCriminal = App\Criminal::all()->random()->id;
+    $user->save();
 }

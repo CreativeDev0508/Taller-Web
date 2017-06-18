@@ -7,7 +7,11 @@
 
 <h3 class="text-center"> Tu puntaje final es: {{$puntaje}}</h3>
 
-<h2 class="text-center"><a href="#" class="btn btn-danger btn-lg">--> VOLVER A JUGAR <--</a></h2>
+<h2 class="text-center">
+<a href="{{asset('/comenzar')}}" class="btn btn-danger btn-lg">--> VOLVER A JUGAR <--</a> |
+<a href="{{asset('/top')}}" class="btn btn-danger btn-lg">--> VER RANKING <--</a>
+
+</h2>
 </div>
 </div>
 </div>

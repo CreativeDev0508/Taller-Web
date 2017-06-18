@@ -8,6 +8,9 @@ class Criminal extends Model
 {
    protected $table = "criminal";
 
+
+
+
    public function pais(){
         return $this->belongsTo(Pais::Class);
     }
