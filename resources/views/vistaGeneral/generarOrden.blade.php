@@ -1,3 +1,4 @@
+@extends('layouts.master')  @section('titulo', 'Home')   @section('contenido')
 
 	<div class="container fuenteTitulo">
 		
@@ -73,3 +74,5 @@
 		</div>
 
 	</div>
+
+@endsection

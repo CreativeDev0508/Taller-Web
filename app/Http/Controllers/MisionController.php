@@ -49,4 +49,10 @@ class MisionController extends Controller
 
         return redirect('/comenzar');
     }
+
+    public function orden()
+    {
+
+        return view ('vistaGeneral.generarOrden');
+    }
 }

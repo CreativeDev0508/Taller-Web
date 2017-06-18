@@ -31,7 +31,9 @@ Route::get('/mapa', 'GeneralController@mapa');
 Route::get('/investigar', 'GeneralController@pistas');
 Route::get('/ver/{id}', 'GeneralController@ver');
 
+
 Route::get('/criminalcapturado', 'MisionController@criminal');
+Route::get('/orden', 'MisionController@orden');
 Route::get('/jefecapturado', 'MisionController@jefe');
 
 });

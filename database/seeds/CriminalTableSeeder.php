@@ -12,48 +12,72 @@ class CriminalTableSeeder extends Seeder
     public function run()
     {
         App\Criminal::create([
-            'nombre' => "Roberto Fusil",
-            'pelo' => "Marron",
-            'sexo' => "Masculino",
-            'distintivo' => "Ninguno",
-            'tez' => "Palida",
-            'pista' => "nc",
-            'ubicacion' => implode(',', array(1, 2, 3, 5, 4)),
-            'idNacionalidad' => 1,
+            'nombre' => "Carlos Lucania",
+            'idPelo' => 1,
+            'idSexo' => 1,
+            'idDistintivo' => 1,
+            'idTez' => 1,
+            'imagen' => 'crim1.png',
+            'ubicacion' => implode(',', array(1, 2, 3, 4, 5)),
+            'idNacionalidad' => App\Pais::all()->random()->id,
         ]);
 
         App\Criminal::create([
-            'nombre' => "Luciana Cartucho",
-            'pelo' => "Colorado",
-            'sexo' => "Femenino",
-            'distintivo' => "Tatuaje",
-            'tez' => "Clara",
-            'pista' => "n/c",
-            'ubicacion' => implode(',', array(3, 1, 4, 2, 5)),
-            'idNacionalidad' => 2,
+            'nombre' => "Franco Costello",
+            'idPelo' => 2,
+            'idSexo' => 1,
+            'idDistintivo' => 2,
+            'idTez' => 2,
+            'imagen' => 'crim2.png',
+            'ubicacion' => implode(',', array(3, 4, 1, 2, 5)),
+            'idNacionalidad' => App\Pais::all()->random()->id,
         ]);
 
         App\Criminal::create([
-            'nombre' => "Marcos Mata",
-            'pelo' => "Calvo",
-            'sexo' => "Masculino",
-            'distintivo' => "Cicatriz",
-            'tez' => "Bronceada",
-            'pista' => "n/c",
-            'ubicacion' => implode(',', array(4, 3, 1, 2, 5)),
-            'idNacionalidad' => 3,
+            'nombre' => "Lucas de Franco",
+            'idPelo' => 3,
+            'idSexo' => 1,
+            'idDistintivo' => 3,
+            'idTez' => 3,
+            'imagen' => 'crim3.png',
+            'ubicacion' => implode(',', array(5, 2, 3, 1, 4)),
+            'idNacionalidad' => App\Pais::all()->random()->id,
         ]);
 
         App\Criminal::create([
-            'nombre' => "Roy Williams",
-            'pelo' => "Calvo",
-            'sexo' => "Masculino",
-            'distintivo' => "Cicatriz",
-            'tez' => "Clara",
-            'pista' => "n/c",
-            'ubicacion' => implode(',', array(4, 3, 1, 2, 5)),
-            'idNacionalidad' => 4,
+            'nombre' => "Susana Bonanno",
+            'idPelo' => 4,
+            'idSexo' => 2,
+            'idDistintivo' => 4,
+            'idTez' => 4,
+            'imagen' => 'crim4.png',
+            'ubicacion' => implode(',', array(4, 1, 3, 5, 2)),
+            'idNacionalidad' => App\Pais::all()->random()->id,
         ]);
+
+        App\Criminal::create([
+            'nombre' => "Martha Arellano",
+            'idPelo' => 1,
+            'idSexo' => 2,
+            'idDistintivo' => 3,
+            'idTez' => 1,
+            'imagen' => 'crim5.png',
+            'ubicacion' => implode(',', array(3, 5, 1, 4, 2)),
+            'idNacionalidad' => App\Pais::all()->random()->id,
+        ]);
+
+        App\Criminal::create([
+            'nombre' => "Maria Licciardi",
+            'idPelo' => 2,
+            'idSexo' => 2,
+            'idDistintivo' => 4,
+            'idTez' => 4,
+            'imagen' => 'crim6.png',
+            'ubicacion' => implode(',', array(1, 5, 2, 4, 3)),
+            'idNacionalidad' => App\Pais::all()->random()->id,
+        ]);
+
+        
 
         
     }
