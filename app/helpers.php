@@ -13,6 +13,13 @@ function restarHoras($horas){
     return;
 }
 
+function sumarHoras($horas){
+    $usuario = App\User::find(Auth::User()->id);
+    $usuario->tiempo += $horas;
+    $usuario->save();
+
+    return;
+}
 
 function validarPais($id, $criminal){ 
     // $id representa el pais al cual quiero viajar
