@@ -44,8 +44,12 @@ class MisionController extends Controller
         public function asignar(){
         
         Session::put('pais', 0);
+
         // Le asigno un criminal aletorio
         asignarCriminal();
+
+        // Vuelvo a comenzar el tiempo que tiene disponible
+        resetearTiempo();
 
         return redirect('/comenzar');
     }
@@ -80,12 +84,12 @@ class MisionController extends Controller
                         }
 
                 // Guardo el puntaje en la tabla record del usuario
-                guardarPuntaje($puntaje);
+                guardarPuntaje($puntaje, $datos->criminalSeleccionado);
 
 
                 
 
-        return view('mision.criminalCapturado', ['mensaje' => $mensaje, 'puntaje' => $puntaje]);
+        return view('mision.criminalCapturado', ['mensaje' => $mensaje, 'puntaje' => ($puntaje - Auth::User()->record)]);
        
     }
 }
