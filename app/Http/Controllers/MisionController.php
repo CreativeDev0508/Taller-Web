@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Criminal;
+use App\Top;
 use Illuminate\Support\Facades\Auth;
 use App\Pais;
 use Session;
@@ -87,6 +88,13 @@ class MisionController extends Controller
                 // Por cada hora que le sobro del tiempo, sumo 2 puntos
                 
                 $puntaje = calcularPuntaje();
+
+                $top = new Top;
+
+                $top->usuario = Auth::User()->nombre;
+                $top->puntaje = $puntaje;
+
+                $top->save();
             }
                 else
                 {

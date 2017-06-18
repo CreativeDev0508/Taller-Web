@@ -8,6 +8,7 @@ class TopController extends Controller
 {
     public function inicio(){
 
-        return View('top.ranking');
+        $tops = App\Top::all()->orderBy('puntaje');
+        return View('top.ranking', ['tops' => $tops]);
     }
 }
