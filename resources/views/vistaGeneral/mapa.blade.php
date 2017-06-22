@@ -7,7 +7,11 @@
 		@if(Auth::User()->tiempo > 0)
 		<div class="alert alert-success" style="font-size:25px">Tiempo Restante: {{Auth::User()->tiempo }} Hora/s</div>
 			@foreach($paises as $p)
+			 @if($p->id == session('pais'))
+				<div ><a href="#" class="btn btn-default botonMapa" disabled="disabled" style="font-size:20px; margin-bottom: 10px">{{$p->nombre}}</a></div>				
+				@else
 				<div ><a href="{{asset('irPais')}}/{{$p->id}}" class="btn btn-danger botonMapa" style="font-size:20px; margin-bottom: 10px">{{$p->nombre}}</a></div>
+			@endif
 			@endforeach
 
 			@else
@@ -17,7 +21,6 @@
 	<div class="col-md-7 text-center margenMapa divOpaco" style="height: 450px;">
 		<img src="{{asset('images/mapamundi2.png')}}" style="margin-top: 8px;"><br /><br />
 	</div>
-	<div><a href="{{asset('irPais')}}/{{session('pais')}}"><button type="button" class="btn btn-danger boton">Volver</button></></a></div>
 </div>
 
 

@@ -20,7 +20,7 @@
 				<div class="col-md-12 divOpaco margenSup cajaOpc text-center">
         <!-- Mensaje que aparece si es el ultimo pais donde se encuentra el ladron -->
           @if(Session::has('mensaje'))	<div class="alert alert-danger">{{Session::get('mensaje')}}</div> @endif
-					<a href="{{asset('mapa')}}" class="btn btn-danger botonJuego ">MAPA</a>
+					<a href="{{asset('mapa')}}" class="btn btn-danger botonJuego ">VIAJAR</a>
 					<a href="{{asset('orden')}}" class="btn btn-danger botonJuego">ORDEN DE CAPTURA</a>					
 				</div>
 

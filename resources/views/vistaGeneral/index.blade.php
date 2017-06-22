@@ -12,7 +12,7 @@
 	    	<div class="col-md-8 divOpaco colorBlanco text-center cajaPrincipal"> 
 	    	<h1> MENU PRINCIPAL </h1>
 	    	<div><a href="{{asset('asignarPais')}}" class="btn btn-danger boton">Comenzar</div></a>
-	    	<div><a href="{{asset('register')}}" class="btn btn-danger boton">Login/Registro</div></a>
+	    	<div><a href="{{asset('register')}}" class="btn btn-danger boton">Registro</div></a>
 	    	<div><a href="{{asset('top')}}" class="btn btn-danger boton margenInf">Ranking</div></a>
 	    	</div>
 	    	
