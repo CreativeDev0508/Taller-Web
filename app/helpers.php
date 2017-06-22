@@ -89,19 +89,19 @@ function proximoPais($criminal){
 
     switch ($proximo) {
     case 1: /* Argentina */
-        $proximo = "El ladron se fue al pais del dulce de leche y los asados";
+        $proximo = "La persona a la que estan buscando comento que iba a ir al pais en el que se come el mejor asado y donde podia comprar una golosina... dulce de leche?";
         break;
     case 2: /* Brasil */ 
-        $proximo = "El ladron se fue al pais del carnaval";
+        $proximo = "La persona que estan buscando dijo que iba a ir a visitar el Maracana y a tomar unas caipirinhas";
         break;
     case 3: /* Uruguay */   
-        $proximo = "El ladron se fue al pais del mate y los porros";
+        $proximo = "La persona que estan buscando estaba hablando de hacer una reserva para ir a Punta del Este";
         break;
     case 4: /* Estados Unidos */
-        $proximo = "El ladron se fue al pais mas belico del mundo";
+        $proximo = "La persona que buscan tenia entradas para ver un partido entre los Bulls y los Spurs";
         break;
     case 5: /* Alemania */
-        $proximo = "El ladron se fue al pais de la cerveza y las salchichas";
+        $proximo = "La persona que estan buscando iba a ir al Museo de la historia de Hamburgo";
         break;
 }
 
@@ -154,7 +154,7 @@ function asignarValor($n, $criminal){
 
     if($n == 3)
     {
-        $n = "No encontramos nada interesante...";
+        $n = "Lo lamento, no puedo ayudarlo. No se nada";
         return $n;
     }
 

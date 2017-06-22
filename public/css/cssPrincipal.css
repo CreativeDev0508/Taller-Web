@@ -1,10 +1,6 @@
 body 
 {
 	background: url('../images/bg1.jpg') no-repeat center center fixed;
-<<<<<<< HEAD
-=======
-
->>>>>>> 17268826f6d7dd8718c295bb2017c69ec557a0d3
 } 
 
 @font-face {
@@ -38,20 +34,12 @@ margin-top: 50px;
 
 .botonJuego
 {
-<<<<<<< HEAD
 	vertical-align: center;
 	min-width: 40%;
-=======
-	min-width: 25%;
->>>>>>> 17268826f6d7dd8718c295bb2017c69ec557a0d3
 	min-height: 50%;
 	margin-top: 40px;
 	margin-left: 10px;
-	font-size: 30px;
-<<<<<<< HEAD
-	
-=======
->>>>>>> 17268826f6d7dd8718c295bb2017c69ec557a0d3
+	font-size: 40px;
 }
 .margenSup
 {
@@ -61,6 +49,11 @@ margin-top: 50px;
 .margenSupMax
 {
 	margin-top: 200px
+}
+
+.margenMapa
+{
+	margin-top: 100px
 }
 
 .margenInf
@@ -76,6 +69,11 @@ margin-top: 50px;
 .fuenteTitulo
 {
 	font-family: "Big Noodle";
+}
+
+.fuenteOrden
+{
+	font-size: 20px;
 }
 
 .cajaMapa
@@ -114,8 +112,6 @@ margin-top: 50px;
 	width: 550px;
 	margin-left: 6%;
 	margin-top: 2%;
-=======
->>>>>>> 17268826f6d7dd8718c295bb2017c69ec557a0d3
 }
 
 .cajaOrden
@@ -126,4 +122,9 @@ margin-top: 50px;
 .botonOrden
 {
 	display: none;
+}
+
+.botonMapa
+{
+	width: 100%;
 }
